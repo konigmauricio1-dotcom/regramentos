@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Regramento Interno</title>
+    <title>Central de Regramento</title>
     <style>
         :root {
             --bg: #0f172a;
@@ -54,56 +54,18 @@
             font-size: 1rem;
         }
 
-        .tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 0 0 20px;
-        }
-
-        .tab-button {
-            border: 1px solid rgba(255, 255, 255, 0.14);
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text);
-            border-radius: 999px;
-            padding: 12px 18px;
-            font-size: 0.95rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .tab-button:hover {
-            transform: translateY(-1px);
-            background: rgba(255, 255, 255, 0.09);
-        }
-
-        .tab-button.active {
-            background: var(--card);
-            border-color: transparent;
-        }
-
-        .tab-button:focus-visible,
-        .link-card:focus-visible,
-        .password-input:focus-visible,
-        .password-button:focus-visible,
-        .secondary-button:focus-visible {
+        .link-card:focus-visible {
             outline: 3px solid var(--focus);
             outline-offset: 3px;
         }
 
-        .tab-panel {
-            display: none;
+        .content-panel {
             background: var(--panel);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 18px;
             padding: 24px;
             box-shadow: var(--shadow);
             backdrop-filter: blur(8px);
-        }
-
-        .tab-panel.active {
-            display: block;
         }
 
         .container {
@@ -133,110 +95,14 @@
             box-shadow: 0 12px 24px rgba(37, 99, 235, 0.25);
         }
 
-        .password-card {
-            max-width: 480px;
-            margin: 0 auto;
-            padding: 24px;
-            border-radius: 16px;
-            background: rgba(15, 23, 42, 0.45);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .password-title {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--text);
-        }
-
-        .password-help {
-            margin-bottom: 18px;
-            color: var(--muted);
-        }
-
-        .password-form {
-            display: grid;
-            gap: 12px;
-        }
-
-        .password-input {
-            width: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            border-radius: 10px;
-            padding: 14px 16px;
-            background: rgba(255, 255, 255, 0.06);
-            color: var(--text);
-            font-size: 1rem;
-        }
-
-        .password-button,
-        .secondary-button {
-            border: 0;
-            border-radius: 10px;
-            padding: 14px 16px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s ease, opacity 0.2s ease;
-        }
-
-        .password-button {
-            background: var(--card);
-            color: var(--text);
-        }
-
-        .secondary-button {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--text);
-        }
-
-        .password-button:hover,
-        .secondary-button:hover {
-            transform: translateY(-1px);
-        }
-
-        .message {
-            min-height: 22px;
-            font-size: 0.95rem;
-        }
-
-        .message.error {
-            color: #fecaca;
-        }
-
-        .message.success {
-            color: #bbf7d0;
-        }
-
-        .leaders-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 18px;
-        }
-
-        .leaders-header p {
-            margin-top: 8px;
-        }
-
-        .hidden {
-            display: none;
-        }
-
         @media (max-width: 600px) {
             main {
                 padding-top: 32px;
                 padding-bottom: 40px;
             }
 
-            .tab-panel {
+            .content-panel {
                 padding: 18px;
-            }
-
-            .leaders-header {
-                flex-direction: column;
-                align-items: stretch;
             }
         }
     </style>
@@ -244,20 +110,11 @@
 <body>
     <main>
         <header>
-            <h1>Regramento Interno</h1>
-            <p>Central de acesso aos fluxos e documentos internos.</p>
+            <h1>Central de Regramento</h1>
+            <p>Acesso rapido aos fluxos e documentos internos.</p>
         </header>
 
-        <div class="tabs" role="tablist" aria-label="Navegacao de areas">
-            <button class="tab-button active" type="button" role="tab" aria-selected="true" aria-controls="tab-geral" id="btn-geral" data-tab-target="tab-geral">
-                Geral
-            </button>
-            <button class="tab-button" type="button" role="tab" aria-selected="false" aria-controls="tab-liderancas" id="btn-liderancas" data-tab-target="tab-liderancas">
-                Liderancas
-            </button>
-        </div>
-
-        <section class="tab-panel active" id="tab-geral" role="tabpanel" aria-labelledby="btn-geral">
+        <section class="content-panel" aria-label="Fluxos internos">
             <nav aria-label="Lista de fluxos internos">
                 <ul class="container">
                     <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgCuZAnmOONNSrHAPUATHKNFAV8M4YA_wRCZMGW81ztIr80?e=q8Dl3g" target="_blank" rel="noopener noreferrer">Tributacao</a></li>
@@ -279,133 +136,6 @@
                 </ul>
             </nav>
         </section>
-
-        <section class="tab-panel" id="tab-liderancas" role="tabpanel" aria-labelledby="btn-liderancas">
-            <div class="password-card" id="leaders-lock">
-                <div class="password-title">Acesso restrito para liderancas</div>
-                <p class="password-help">
-                    Informe a senha para liberar os arquivos desta area. Apos o desbloqueio, este navegador ficara autorizado neste computador.
-                </p>
-                <form class="password-form" id="leaders-form">
-                    <input
-                        class="password-input"
-                        type="password"
-                        id="leaders-password"
-                        name="leaders-password"
-                        placeholder="Digite a senha"
-                        autocomplete="current-password"
-                        required
-                    >
-                    <button class="password-button" type="submit">Desbloquear</button>
-                    <div class="message" id="leaders-message" aria-live="polite"></div>
-                </form>
-            </div>
-
-            <div class="hidden" id="leaders-content">
-                <div class="leaders-header">
-                    <div>
-                        <div class="password-title">Arquivos para liderancas</div>
-                        <p>Area liberada neste navegador. Use os links abaixo para acessar conteudos editaveis.</p>
-                    </div>
-                    <button class="secondary-button" type="button" id="leaders-logout">Bloquear novamente</button>
-                </div>
-
-                <nav aria-label="Arquivos para liderancas">
-                    <ul class="container">
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgAkqU0L57UETIiaFQjsP6U3AcqUx0tcL-7WBYbon4-rvAA?e=RvC2Ct" target="_blank" rel="noopener noreferrer">Renda PJ</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgChT0I6tbVrT6romTqABUCZAbNEjdvXzHbccGnKUzCMkuE?e=ZCenpb" target="_blank" rel="noopener noreferrer">Renda PF</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgAMviYoI5vSTaJx0jSdqMzHARoQ2aXFs0UMAg1v8TUKDEE?e=alrPuz" target="_blank" rel="noopener noreferrer">Renda Agro</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgAjlqoGgY8fQ7bOV4jKOF4oAYTVyPtA4hl04ttAW36dURI?e=cYbHSS" target="_blank" rel="noopener noreferrer">Pessoa PJ</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgANWWVb1AY5So2tb2pN1u5qAQSVRcB7EynqlL8EvhV5pME?e=OWHfeJ" target="_blank" rel="noopener noreferrer">Pessoa PF</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgCZJXDmNvZaRJlgWSnJuJAMAVlzWANH4fYmEOkJ16YXEg8?e=Ue6IqU" target="_blank" rel="noopener noreferrer">Certidao</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgAVvdvp-12nSbBTUJOQCjmkAbt2e_Re8XIIXW2spoUA5Ms?e=E52pb7" target="_blank" rel="noopener noreferrer">Relacionamento PF</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgACT-IPrcqGRYKD1LKa5lEbAcWWRdjS__quI9pMAPk2xTc?e=bgvccJ" target="_blank" rel="noopener noreferrer">Relacionamento PJ</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgDpRR3GJSqFSoyIb3SXMt7jAZRQYXvS4BBZ1MWmEhLKxAM?e=O97CY3" target="_blank" rel="noopener noreferrer">Endereco</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgDTXbIoQSuZT6stbpJzjM6mAbiN3XqOP-dNfly7QD5BKdE?e=dJXmyn" target="_blank" rel="noopener noreferrer">Produtor</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgCuZAnmOONNSrHAPUATHKNFAYTYKZaSfuKHPQHQzKzAsHw?e=kXgF5c" target="_blank" rel="noopener noreferrer">Tributacao</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgCwJJoVlhqMT7k4-jys_QzIAYfAABW4SSxFdoA4XoKCbqQ?e=d6fG7F" target="_blank" rel="noopener noreferrer">Bem Novo</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgDMv_xCUsInTIG0v5IzHYOiAdZhYXJ-9ZGc-2a1oOdzf2k?e=NSGMQq" target="_blank" rel="noopener noreferrer">Produtividade</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgBPKfiZz5psT421ICPnfcWjAXQBV9oayaEx_glL_JyBL4w?e=jOTrG8" target="_blank" rel="noopener noreferrer">Imposto de Renda</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgAiivbQ5yD2R6T0MqU4PyNpAQXTfXov24EvQZE38iJ-DzQ?e=jKPLrN" target="_blank" rel="noopener noreferrer">Assinaturas</a></li>
-                        <li><a class="link-card" href="https://grupometa.sharepoint.com/:o:/s/Sicoob-BPO/IgDED5ZvrU-mQ6LqbZYpkymhAYsSgFRoQaSdqDwHbuQ6PQ4?e=cuwnkX" target="_blank" rel="noopener noreferrer">Recursos Gerais</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
     </main>
-
-    <script>
-        const LEADERS_PASSWORD = "mortadela1@#$";
-        const LEADERS_STORAGE_KEY = "regramento-liderancas-liberado";
-
-        const tabButtons = document.querySelectorAll("[data-tab-target]");
-        const tabPanels = document.querySelectorAll(".tab-panel");
-        const leadersLock = document.getElementById("leaders-lock");
-        const leadersContent = document.getElementById("leaders-content");
-        const leadersForm = document.getElementById("leaders-form");
-        const leadersPasswordInput = document.getElementById("leaders-password");
-        const leadersMessage = document.getElementById("leaders-message");
-        const leadersLogout = document.getElementById("leaders-logout");
-
-        function setActiveTab(targetId) {
-            tabButtons.forEach((button) => {
-                const isActive = button.dataset.tabTarget === targetId;
-                button.classList.toggle("active", isActive);
-                button.setAttribute("aria-selected", String(isActive));
-            });
-
-            tabPanels.forEach((panel) => {
-                panel.classList.toggle("active", panel.id === targetId);
-            });
-        }
-
-        function setLeadersUnlocked(unlocked) {
-            leadersLock.classList.toggle("hidden", unlocked);
-            leadersContent.classList.toggle("hidden", !unlocked);
-
-            if (unlocked) {
-                localStorage.setItem(LEADERS_STORAGE_KEY, "true");
-                leadersMessage.textContent = "";
-                leadersMessage.className = "message";
-                leadersPasswordInput.value = "";
-            } else {
-                localStorage.removeItem(LEADERS_STORAGE_KEY);
-            }
-        }
-
-        function restoreLeadersAccess() {
-            const unlocked = localStorage.getItem(LEADERS_STORAGE_KEY) === "true";
-            setLeadersUnlocked(unlocked);
-        }
-
-        tabButtons.forEach((button) => {
-            button.addEventListener("click", () => {
-                setActiveTab(button.dataset.tabTarget);
-            });
-        });
-
-        leadersForm.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            if (leadersPasswordInput.value === LEADERS_PASSWORD) {
-                leadersMessage.textContent = "Acesso liberado neste navegador.";
-                leadersMessage.className = "message success";
-                setLeadersUnlocked(true);
-                return;
-            }
-
-            leadersMessage.textContent = "Senha incorreta. Tente novamente.";
-            leadersMessage.className = "message error";
-            leadersPasswordInput.select();
-        });
-
-        leadersLogout.addEventListener("click", () => {
-            setLeadersUnlocked(false);
-            leadersMessage.textContent = "Area bloqueada novamente.";
-            leadersMessage.className = "message";
-        });
-
-        restoreLeadersAccess();
-    </script>
 </body>
 </html>
